@@ -38,6 +38,8 @@ public class LogoutServlet extends HttpServlet {
                     System.out.println("JSESSIONID="+cookie.getValue());
                     break;
                 }
+            cookie.setMaxAge(0);
+            response.addCookie(cookie);
             }
         }
         //invalidate the session if exists
